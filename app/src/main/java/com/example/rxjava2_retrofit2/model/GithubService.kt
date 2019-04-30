@@ -21,12 +21,12 @@ class GithubService {
         val githubService = retrofit.create(GithubAPI::class.java)
         val request = githubService.loadData("KRMKGOLD")
 
-        request.enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
+        request.enqueue(object : Callback<ArrayList<Repo>> {
+            override fun onFailure(call: Call<ArrayList<Repo>>, t: Throwable) {
                 callback.onError(t)
             }
 
-            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
+            override fun onResponse(call: Call<ArrayList<Repo>>, response: Response<ArrayList<Repo>>) {
                 if (response.isSuccessful) {
                     callback.onSuccess(response.body()!!)
                 }

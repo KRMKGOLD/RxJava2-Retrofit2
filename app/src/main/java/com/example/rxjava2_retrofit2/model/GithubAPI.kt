@@ -7,5 +7,5 @@ import retrofit2.http.Path
 //    https://api.github.com/users/KRMKGOLD/repos
 interface GithubAPI {
     @GET("/users/{user}/repos")
-    fun loadData(@Path("user") user: String): Call<List<Repo>>
+    fun loadData(@Path("user") user: String): Call<ArrayList<Repo>>
 }
