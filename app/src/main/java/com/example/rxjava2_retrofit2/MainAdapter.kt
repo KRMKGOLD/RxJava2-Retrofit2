@@ -20,7 +20,7 @@ class MainAdapter(private val context : Context, private var list : ArrayList<Re
         holder.bind(list[position])
     }
 
-    fun setItem(list : ArrayList<Repo>) {
+    fun updateItem(list : ArrayList<Repo>) {
         this.list = list
         notifyDataSetChanged()
     }
